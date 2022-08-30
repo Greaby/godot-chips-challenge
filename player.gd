@@ -7,19 +7,31 @@ const TILE_SIZE = 64
 onready var raycast := $RayCast2D
 
 
-func _process(delta: float) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	var direction = Vector2()
+	direction.x = int(event.is_action_pressed("move_right")) - int(event.is_action_pressed("move_left"))
+	direction.y = int(event.is_action_pressed("move_down")) - int(event.is_action_pressed("move_up"))
 	
-	direction.x = int(Input.is_action_just_pressed("move_right")) - int(Input.is_action_just_pressed("move_left"))
-	direction.y = int(Input.is_action_just_pressed("move_down")) - int(Input.is_action_just_pressed("move_up"))
-
+	if direction.length() == 0:
+		return
+		
 	raycast.cast_to = direction * TILE_SIZE
 	raycast.force_raycast_update()
-
-	if not raycast.is_colliding():
-		position += direction * TILE_SIZE
+	
+	var collider = raycast.get_collider()
+	print(collider)
+	if collider and !collider.has_method("can_move"):
+		return
+	
+	if collider and not collider.can_move():
+		return
+		
+	position += direction * TILE_SIZE
 
 
 func _on_Player_area_entered(area: Area2D) -> void:
-	if area.is_in_group("collectible"):
-		area.queue_free()
+	print(area)
+	if area.has_method("interact"):
+		area.interact()
+		
+		print(Inventory.inventory)

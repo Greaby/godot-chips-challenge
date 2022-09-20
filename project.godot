@@ -11,12 +11,13 @@ config_version=4
 [application]
 
 config/name="chips_challenge"
-run/main_scene="res://level.tscn"
+run/main_scene="res://level_manager.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Inventory="*res://autoload/inventory.gd"
+Global="*res://autoload/global.gd"
 
 [gui]
 

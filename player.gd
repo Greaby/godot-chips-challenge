@@ -1,9 +1,6 @@
 extends Area2D
 
 
-const TILE_SIZE = 64
-
-
 onready var raycast := $RayCast2D
 
 
@@ -15,23 +12,20 @@ func _unhandled_input(event: InputEvent) -> void:
 	if direction.length() == 0:
 		return
 		
-	raycast.cast_to = direction * TILE_SIZE
+	raycast.cast_to = direction * Global.TILE_SIZE
 	raycast.force_raycast_update()
 	
 	var collider = raycast.get_collider()
-	print(collider)
+
 	if collider and !collider.has_method("can_move"):
 		return
-	
+
 	if collider and not collider.can_move():
 		return
 		
-	position += direction * TILE_SIZE
+	position += direction * Global.TILE_SIZE
 
 
 func _on_Player_area_entered(area: Area2D) -> void:
-	print(area)
 	if area.has_method("interact"):
 		area.interact()
-		
-		print(Inventory.inventory)

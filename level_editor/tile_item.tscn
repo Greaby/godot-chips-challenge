@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://level_editor/tile_item.gd" type="Script" id=1]
+
+[node name="TileItem" type="TextureRect"]
+margin_bottom = 81.0
+script = ExtResource( 1 )

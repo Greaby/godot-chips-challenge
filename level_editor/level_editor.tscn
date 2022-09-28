@@ -9,6 +9,8 @@ script = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+smoothing_enabled = true
+smoothing_speed = 10.0
 
 [node name="Grid" type="Sprite" parent="."]
 texture = ExtResource( 1 )

@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://level_editor/tile_item.gd" type="Script" id=1]
+[ext_resource path="res://assets/floor.png" type="Texture" id=2]
 
 [node name="TileItem" type="TextureRect"]
 margin_bottom = 81.0
+texture = ExtResource( 2 )
 script = ExtResource( 1 )
+
+[node name="Focus" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_left = -2.0
+margin_top = -2.0
+margin_right = 66.0
+margin_bottom = 66.0

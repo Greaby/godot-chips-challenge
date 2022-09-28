@@ -37,6 +37,9 @@ func _process(delta: float) -> void:
 	
 
 func handle_camera_move(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_drag"):
+		drag_initial_position = get_global_mouse_position()
+	
 	if Input.is_action_pressed("ui_drag"):
 		camera.position += drag_initial_position - get_global_mouse_position()
 		return 
@@ -51,9 +54,6 @@ func handle_camera_move(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	handle_tilemap()
 	
-	if Input.is_action_just_pressed("ui_drag"):
-		drag_initial_position = get_global_mouse_position()
-		
 	var zoom = int(Input.is_action_pressed("ui_zoom_out")) - int(Input.is_action_pressed("ui_zoom_in"))
 	camera.zoom = Vector2.ONE * clamp(camera.zoom.x + zoom * CAMERA_ZOOM_SPEED, CAMERA_MIN_ZOOM, CAMERA_MAX_ZOOM)
 	
@@ -69,9 +69,12 @@ func handle_tilemap() -> void:
 
 
 func _on_tile_item_gui_input(event: InputEvent, tile_item) -> void:
-	if not event is InputEventMouseButton:
+	if not event is InputEventMouseButton or not event.is_action_pressed("ui_place"):
 		return
+		
+	for item in tile_list.get_children():
+		item.unselect()
 
-	if event.is_action_pressed("ui_place"):
-		selected_tile = tile_item.tile_id
+	selected_tile = tile_item.tile_id
+	tile_item.select()
 

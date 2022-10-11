@@ -41,8 +41,11 @@ func handle_camera_move(delta: float) -> void:
 		drag_initial_position = get_global_mouse_position()
 	
 	if Input.is_action_pressed("ui_drag"):
+		camera.smoothing_enabled = false
 		camera.position += drag_initial_position - get_global_mouse_position()
-		return 
+		return
+	else:
+		camera.smoothing_enabled = true
 	
 	var camera_move := Vector2()
 	camera_move.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))

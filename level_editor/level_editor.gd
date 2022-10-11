@@ -12,6 +12,8 @@ var selected_tile :int = -1
 
 onready var camera := $Camera2D
 onready var tilemap := $TileMap
+onready var export_file_dialog := $UI/Control/ExportFileDialog
+onready var import_file_dialog := $UI/Control/ImportFileDialog
 
 onready var tile_list := $UI/Control/MarginContainer/TileList
 
@@ -80,4 +82,57 @@ func _on_tile_item_gui_input(event: InputEvent, tile_item) -> void:
 
 	selected_tile = tile_item.tile_id
 	tile_item.select()
+
+
+
+func _on_ExportButton_pressed() -> void:
+	export_file_dialog.popup()
+	
+func _on_ImportButton_pressed() -> void:
+	import_file_dialog.popup()
+
+
+func _on_FileDialog_file_selected(path: String) -> void:
+	var file = File.new()
+	var error = file.open(path, File.WRITE)
+	
+	if error != OK:
+		print("Error opening file!")
+		return
+		
+	var data = export_level()
+	file.store_string(JSON.print(data))
+	file.close()
+	
+func export_level() -> Dictionary:
+	var terrain := tilemap.get("tile_data") as PoolIntArray
+	
+	var data = {
+		"version" : 1,
+		"data": {
+			"terrain" : terrain
+		}
+	}
+
+	return data
+
+
+func _on_ImportFileDialog_file_selected(path: String) -> void:
+	var file = File.new()
+	if not file.file_exists(path):
+		print("File doesn't exists")
+		return
+
+	var error = file.open(path, File.READ)
+	if error != OK:
+		print("Error opening the file")
+		return
+	
+	var json_level = JSON.parse(file.get_as_text())
+	file.close()
+	
+	if json_level.error != OK:
+		print("Error reading level")
+
+	tilemap.set("tile_data", json_level.result.data.terrain)
 

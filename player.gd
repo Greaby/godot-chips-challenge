@@ -1,10 +1,15 @@
 extends Area2D
 
 
-onready var raycast := $RayCast2D
+@onready var raycast :RayCast2D = $RayCast2D
+@onready var camera : Camera2D = $Camera2D
+
+func _ready():
+	camera.current = true
 
 
 func _unhandled_input(event: InputEvent) -> void:
+
 	var direction = Vector2()
 	direction.x = int(event.is_action_pressed("move_right")) - int(event.is_action_pressed("move_left"))
 	direction.y = int(event.is_action_pressed("move_down")) - int(event.is_action_pressed("move_up"))
@@ -12,7 +17,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if direction.length() == 0:
 		return
 		
-	raycast.cast_to = direction * Global.TILE_SIZE
+	raycast.target_position = direction * Global.TILE_SIZE
 	raycast.force_raycast_update()
 	
 	var collider = raycast.get_collider()

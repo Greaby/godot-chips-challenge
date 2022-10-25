@@ -1,7 +1,7 @@
 extends Area2D
 
-export (Inventory.TYPES) var type : int
-export (int) var quantity : int
+@export var type : Inventory.TYPES
+@export var quantity : int
 
 
 func can_move() -> bool:
@@ -9,5 +9,5 @@ func can_move() -> bool:
 
 
 func interact() -> void:
-	Inventory.remove(type, quantity)
+	Inventory.remove_at(type, quantity)
 	queue_free()

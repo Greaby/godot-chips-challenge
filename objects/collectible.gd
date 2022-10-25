@@ -1,6 +1,6 @@
 extends Area2D
 
-export (Inventory.TYPES) var type
+@export var type : Inventory.TYPES
 
 
 func can_move() -> bool:

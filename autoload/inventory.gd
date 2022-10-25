@@ -18,7 +18,7 @@ func add(type: int, quantity: int) -> void:
 	inventory[type] += quantity
 
 
-func remove(type: int, quantity: int) -> void:
+func remove_at(type: int, quantity: int) -> void:
 	if not inventory.has(type):
 		return
 

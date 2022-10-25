@@ -1,0 +1,9 @@
+res://levels/level1.tscn
+res://levels/tileset.tres
+res://levels/level.tscn
+res://level_manager.tscn
+res://ui/alert_box.tscn
+res://player.tscn
+res://levels/level2.tscn
+res://mobs/mob1.tscn
+res://level_editor/level_editor.tscn

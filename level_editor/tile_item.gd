@@ -3,13 +3,13 @@ extends TextureRect
 
 var tile_id :int
 
-onready var focus = $Focus
+@onready var focus = $Focus
 
 func _ready():
-	unselect()
+	deselect()
 
 func select() -> void:
 	focus.show()
 
-func unselect() -> void:
+func deselect() -> void:
 	focus.hide()

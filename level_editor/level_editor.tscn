@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/grid.png" type="Texture" id=1]
+[ext_resource path="res://assets/grid.png" type="Texture2D" id=1]
 [ext_resource path="res://level_editor/level_editor.gd" type="Script" id=2]
 [ext_resource path="res://levels/tileset.tres" type="TileSet" id=3]
 
@@ -9,10 +9,10 @@ script = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-smoothing_enabled = true
-smoothing_speed = 10.0
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
-[node name="Grid" type="Sprite" parent="."]
+[node name="Grid" type="Sprite2D" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 64000, 64000 )
@@ -27,7 +27,7 @@ format = 1
 [node name="Control" type="Control" parent="UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 448.0
+offset_top = 448.0
 
 [node name="ColorRect" type="ColorRect" parent="UI/Control"]
 anchor_right = 1.0
@@ -37,54 +37,54 @@ color = Color( 0, 0, 0, 0.733333 )
 [node name="MarginContainer" type="MarginContainer" parent="UI/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_top = 15
-custom_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_left = 30
 
 [node name="TileList" type="HBoxContainer" parent="UI/Control/MarginContainer"]
-margin_left = 30.0
-margin_top = 15.0
-margin_right = 1024.0
-margin_bottom = 152.0
-custom_constants/separation = 30
+offset_left = 30.0
+offset_top = 15.0
+offset_right = 1024.0
+offset_bottom = 152.0
+theme_override_constants/separation = 30
 
 [node name="ExportFileDialog" type="FileDialog" parent="UI/Control"]
-margin_left = 288.0
-margin_top = 160.0
-margin_right = 736.0
-margin_bottom = 416.0
-popup_exclusive = true
+offset_left = 288.0
+offset_top = 160.0
+offset_right = 736.0
+offset_bottom = 416.0
+exclusive = true
 window_title = "Export le niveau"
 dialog_text = "Choisisez le fichier dans lequel vous souhaitez exporter votre niveau."
 access = 2
-filters = PoolStringArray( "*.json ; Fichier JSON" )
+filters = PackedStringArray( "*.json ; Fichier JSON" )
 
 [node name="ImportFileDialog" type="FileDialog" parent="UI/Control"]
-margin_left = 288.0
-margin_top = 160.0
-margin_right = 736.0
-margin_bottom = 416.0
-popup_exclusive = true
-window_title = "Importer un niveau"
+offset_left = 288.0
+offset_top = 160.0
+offset_right = 736.0
+offset_bottom = 416.0
+exclusive = true
+window_title = "Ouvrir un fichier"
 dialog_text = "Choisisez le niveau à importer."
 mode = 0
 access = 2
-filters = PoolStringArray( "*.json ; Fichier JSON" )
+filters = PackedStringArray( "*.json ; Fichier JSON" )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Control"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -52.0
-margin_bottom = 40.0
+offset_left = -52.0
+offset_bottom = 40.0
 
 [node name="ExportButton" type="Button" parent="UI/Control/VBoxContainer"]
-margin_right = 56.0
-margin_bottom = 20.0
+offset_right = 56.0
+offset_bottom = 20.0
 text = "Export"
 
 [node name="ImportButton" type="Button" parent="UI/Control/VBoxContainer"]
-margin_top = 24.0
-margin_right = 56.0
-margin_bottom = 44.0
+offset_top = 24.0
+offset_right = 56.0
+offset_bottom = 44.0
 text = "Import"
 
 [connection signal="file_selected" from="UI/Control/ExportFileDialog" to="." method="_on_FileDialog_file_selected"]

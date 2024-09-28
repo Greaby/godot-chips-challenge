@@ -1,152 +1,108 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=9 format=4 uid="uid://dayqupq8y3xw8"]
 
-[ext_resource path="res://levels/level.tscn" type="PackedScene" id=1]
-[ext_resource path="res://objects/green_key.tscn" type="PackedScene" id=2]
-[ext_resource path="res://objects/door_yellow.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objects/chips.tscn" type="PackedScene" id=4]
-[ext_resource path="res://objects/blue_key.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/door_green.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/door_red.tscn" type="PackedScene" id=7]
-[ext_resource path="res://objects/door_blue.tscn" type="PackedScene" id=8]
-[ext_resource path="res://objects/yellow_key.tscn" type="PackedScene" id=9]
-[ext_resource path="res://objects/red_key.tscn" type="PackedScene" id=10]
-[ext_resource path="res://objects/door_coin.tscn" type="PackedScene" id=11]
+[ext_resource type="PackedScene" uid="uid://7opiiecgq6y" path="res://levels/level.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://objects/chips.tscn" id="2_vunkx"]
+[ext_resource type="PackedScene" uid="uid://cbh4tay177o4" path="res://objects/door.tscn" id="3_um7k6"]
+[ext_resource type="PackedScene" path="res://objects/finish.tscn" id="4_8djxo"]
+[ext_resource type="PackedScene" path="res://objects/blue_key.tscn" id="5_8re6d"]
+[ext_resource type="PackedScene" path="res://objects/green_key.tscn" id="6_wqjel"]
+[ext_resource type="PackedScene" path="res://objects/red_key.tscn" id="7_fbpbu"]
+[ext_resource type="PackedScene" path="res://objects/yellow_key.tscn" id="8_7ludq"]
 
-[node name="Level1" instance=ExtResource( 1 )]
+[node name="Level1" instance=ExtResource("1")]
 time_limit = 100
 
 [node name="TileMap" parent="." index="1"]
-tile_data = PoolIntArray( -131074, 1, 0, -131073, 1, 0, -196608, 1, 0, -196607, 1, 0, -196606, 1, 0, -196605, 1, 0, -196604, 1, 0, -196603, 1, 0, -196602, 1, 0, -196601, 1, 0, -196600, 1, 0, -65538, 1, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 1, 0, -131069, 1, 0, -131068, 1, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 1, 0, -2, 1, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 1, 0, -65533, 0, 0, -65532, 1, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 1, 0, 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 0, 0, 2, 1, 0, 3, 0, 0, 4, 1, 0, 5, 0, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 131068, 1, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 1, 0, 196604, 1, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 1, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 1, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 1, 0, 262140, 1, 0, 262141, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 327676, 1, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 1, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 1, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 1, 0, 393212, 1, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 1, 0, 458748, 1, 0, 458749, 1, 0, 458750, 1, 0, 458751, 1, 0, 393216, 1, 0, 393217, 1, 0, 393218, 0, 0, 393219, 1, 0, 393220, 0, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 458752, 1, 0, 458753, 0, 0, 458754, 0, 0, 458755, 1, 0, 458756, 0, 0, 458757, 0, 0, 458758, 1, 0, 524288, 1, 0, 524289, 0, 0, 524290, 0, 0, 524291, 1, 0, 524292, 0, 0, 524293, 0, 0, 524294, 1, 0, 589824, 1, 0, 589825, 0, 0, 589826, 0, 0, 589827, 1, 0, 589828, 0, 0, 589829, 0, 0, 589830, 1, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0 )
+tile_map_data = PackedByteArray("AAAHAP3/AQAAAAAAAAAGAP3/AQAAAAAAAAAGAP7/AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AQAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAFAP//AAAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAQAAAAAAAAADAAQAAQAAAAAAAAADAAUAAQAAAAAAAAADAAYAAQAAAAAAAAADAAcAAQAAAAAAAAACAAcAAQAAAAAAAAACAAYAAAAAAAAAAAACAAUAAAAAAAAAAAAEAAMAAQAAAAAAAAADAAMAAQAAAAAAAAACAAMAAQAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAQAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wMAAQAAAAAAAAAAAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAAAAQAAAAAAAAAEAP//AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP3/AQAAAAAAAAADAAEAAQAAAAAAAAADAAAAAQAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAACAAEAAAAAAAAAAAADAP//AQAAAAAAAAABAP//AAAAAAAAAAAAAP//AAAAAAAAAAD/////AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAP7/AAAAAAAAAAACAP3/AAAAAAAAAAACAPz/AAAAAAAAAAABAPz/AQAAAAAAAAAAAPz/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AQAAAAAAAAACAAQAAAAAAAAAAAABAAQAAAAAAAAAAAAAAAQAAQAAAAAAAAD//wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD9/wQAAQAAAAAAAAD9/wMAAQAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAQAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAAIAAAAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAABAAcAAQAAAAAAAAABAAYAAAAAAAAAAAABAAUAAAAAAAAAAAD9/wAAAQAAAAAAAAD9////AQAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAD///3/AQAAAAAAAAD///z/AQAAAAAAAAD///v/AQAAAAAAAAAAAPv/AQAAAAAAAAABAPv/AQAAAAAAAAACAPv/AAAAAAAAAAADAPv/AAAAAAAAAAADAPz/AAAAAAAAAAADAP3/AQAAAAAAAAADAP7/AAAAAAAAAAAEAPz/AAAAAAAAAAAFAPz/AQAAAAAAAAAFAP3/AQAAAAAAAAAFAP7/AAAAAAAAAAAEAPv/AAAAAAAAAAAFAPv/AQAAAAAAAAAHAP7/AQAAAAAAAAD5//3/AQAAAAAAAAD5//7/AQAAAAAAAAD5////AQAAAAAAAAD5/wAAAQAAAAAAAAD5/wEAAQAAAAAAAAD5/wIAAQAAAAAAAAD5/wMAAQAAAAAAAAD6//3/AQAAAAAAAAD6//7/AAAAAAAAAAD6////AAAAAAAAAAD6/wAAAQAAAAAAAAD6/wEAAAAAAAAAAAD6/wIAAAAAAAAAAAD6/wMAAQAAAAAAAAD7//r/AQAAAAAAAAD7//v/AQAAAAAAAAD7//z/AQAAAAAAAAD7//3/AQAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD7/wAAAQAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wMAAQAAAAAAAAD8//r/AQAAAAAAAAD8//v/AAAAAAAAAAD8//z/AAAAAAAAAAD8//3/AQAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAQAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAQAAAAAAAAD9//r/AQAAAAAAAAD9//v/AAAAAAAAAAD9//z/AAAAAAAAAAD9//3/AQAAAAAAAAD9/wUAAQAAAAAAAAD9/wYAAQAAAAAAAAD9/wcAAQAAAAAAAAD+//r/AQAAAAAAAAD+//v/AAAAAAAAAAD+//z/AAAAAAAAAAD+//3/AAAAAAAAAAD+/wUAAAAAAAAAAAD+/wYAAAAAAAAAAAD+/wcAAQAAAAAAAAD///r/AQAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAD//wcAAQAAAAAAAAAAAPr/AQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAABAPr/AQAAAAAAAAACAPr/AQAAAAAAAAADAPr/AQAAAAAAAAAEAPr/AQAAAAAAAAAFAPr/AQAAAAAAAAA=")
 
-[node name="Player" parent="." index="2"]
-position = Vector2( 224, 224 )
+[node name="Chips" parent="Objects" index="0" instance=ExtResource("2_vunkx")]
+position = Vector2(-288, -32)
 
-[node name="Chips" parent="collectibles" index="0" instance=ExtResource( 4 )]
-position = Vector2( 352, 224 )
-collision_layer = 1
-collision_mask = 1
+[node name="Chips6" parent="Objects" index="1" instance=ExtResource("2_vunkx")]
+position = Vector2(-288, 96)
 
-[node name="Chips2" parent="collectibles" index="1" instance=ExtResource( 4 )]
-position = Vector2( 96, 224 )
-collision_layer = 1
-collision_mask = 1
+[node name="Chips7" parent="Objects" index="2" instance=ExtResource("2_vunkx")]
+position = Vector2(-96, 32)
 
-[node name="Chips3" parent="collectibles" index="2" instance=ExtResource( 4 )]
-position = Vector2( 224, 352 )
-collision_layer = 1
-collision_mask = 1
+[node name="Chips8" parent="Objects" index="3" instance=ExtResource("2_vunkx")]
+position = Vector2(160, 32)
 
-[node name="Chips4" parent="collectibles" index="3" instance=ExtResource( 4 )]
-position = Vector2( 416, -32 )
-collision_layer = 1
-collision_mask = 1
+[node name="Chips10" parent="Objects" index="4" instance=ExtResource("2_vunkx")]
+position = Vector2(-32, 352)
 
-[node name="Chips5" parent="collectibles" index="4" instance=ExtResource( 4 )]
-position = Vector2( 544, 160 )
-collision_layer = 1
-collision_mask = 1
+[node name="Chips9" parent="Objects" index="5" instance=ExtResource("2_vunkx")]
+position = Vector2(96, 352)
 
-[node name="Chips6" parent="collectibles" index="5" instance=ExtResource( 4 )]
-position = Vector2( 544, 288 )
-collision_layer = 1
-collision_mask = 1
+[node name="Chips2" parent="Objects" index="6" instance=ExtResource("2_vunkx")]
+position = Vector2(-160, -224)
 
-[node name="Chips7" parent="collectibles" index="6" instance=ExtResource( 4 )]
-position = Vector2( -96, 160 )
-collision_layer = 1
-collision_mask = 1
+[node name="Chips5" parent="Objects" index="7" instance=ExtResource("2_vunkx")]
+position = Vector2(352, -32)
 
-[node name="Chips8" parent="collectibles" index="7" instance=ExtResource( 4 )]
-position = Vector2( -96, 288 )
-collision_layer = 1
-collision_mask = 1
+[node name="Chips3" parent="Objects" index="8" instance=ExtResource("2_vunkx")]
+position = Vector2(224, -224)
 
-[node name="Chips9" parent="collectibles" index="8" instance=ExtResource( 4 )]
-position = Vector2( 160, 544 )
-collision_layer = 1
-collision_mask = 1
+[node name="Chips4" parent="Objects" index="9" instance=ExtResource("2_vunkx")]
+position = Vector2(352, 96)
 
-[node name="Chips10" parent="collectibles" index="9" instance=ExtResource( 4 )]
-position = Vector2( 288, 544 )
-collision_layer = 1
-collision_mask = 1
+[node name="Door" parent="Objects" index="10" instance=ExtResource("3_um7k6")]
+position = Vector2(32, -160)
+type = 0
+quantity = 10
 
-[node name="Chips11" parent="collectibles" index="10" instance=ExtResource( 4 )]
-position = Vector2( 32, -32 )
-collision_layer = 1
-collision_mask = 1
+[node name="Door2" parent="Objects" index="11" instance=ExtResource("3_um7k6")]
+position = Vector2(160, -160)
+type = 2
 
-[node name="RedKey" parent="collectibles" index="11" instance=ExtResource( 10 )]
-position = Vector2( 352, 288 )
-collision_layer = 1
-collision_mask = 1
+[node name="Door3" parent="Objects" index="12" instance=ExtResource("3_um7k6")]
+position = Vector2(224, -96)
 
-[node name="RedKey2" parent="collectibles" index="12" instance=ExtResource( 10 )]
-position = Vector2( 352, 160 )
-collision_layer = 1
-collision_mask = 1
+[node name="Door4" parent="Objects" index="13" instance=ExtResource("3_um7k6")]
+position = Vector2(224, 160)
+type = 3
 
-[node name="BlueKey" parent="collectibles" index="13" instance=ExtResource( 5 )]
-position = Vector2( 96, 160 )
+[node name="Door5" parent="Objects" index="14" instance=ExtResource("3_um7k6")]
+position = Vector2(96, 224)
+type = 4
 
-[node name="BlueKey2" parent="collectibles" index="14" instance=ExtResource( 5 )]
-position = Vector2( 96, 288 )
+[node name="Door6" parent="Objects" index="15" instance=ExtResource("3_um7k6")]
+position = Vector2(-32, 224)
+type = 4
 
-[node name="YellowKey" parent="collectibles" index="15" instance=ExtResource( 9 )]
-position = Vector2( -96, 96 )
+[node name="Door7" parent="Objects" index="16" instance=ExtResource("3_um7k6")]
+position = Vector2(-160, 160)
 
-[node name="YellowKey2" parent="collectibles" index="16" instance=ExtResource( 9 )]
-position = Vector2( 544, 96 )
+[node name="Door8" parent="Objects" index="17" instance=ExtResource("3_um7k6")]
+position = Vector2(-160, -96)
+type = 3
 
-[node name="GreenKey" parent="collectibles" index="17" instance=ExtResource( 2 )]
-position = Vector2( 288, 608 )
+[node name="Door9" parent="Objects" index="18" instance=ExtResource("3_um7k6")]
+position = Vector2(-96, -160)
+type = 2
 
-[node name="GreenKey2" parent="collectibles" index="18" instance=ExtResource( 2 )]
-position = Vector2( 160, 608 )
+[node name="Finish" parent="Objects" index="19" instance=ExtResource("4_8djxo")]
+position = Vector2(32, -224)
 
-[node name="DoorRed" parent="Doors" index="0" instance=ExtResource( 7 )]
-collision_layer = 1
-collision_mask = 1
+[node name="BlueKey" parent="Objects" index="20" instance=ExtResource("5_8re6d")]
+position = Vector2(-96, -32)
 
-[node name="DoorRed2" parent="Doors" index="1" instance=ExtResource( 7 )]
-position = Vector2( -384, 256 )
-collision_layer = 1
-collision_mask = 1
+[node name="BlueKey2" parent="Objects" index="21" instance=ExtResource("5_8re6d")]
+position = Vector2(-96, 96)
 
-[node name="DoorBlue" parent="Doors" index="2" instance=ExtResource( 8 )]
-position = Vector2( -384, 0 )
-collision_layer = 1
-collision_mask = 1
+[node name="GreenKey" parent="Objects" index="22" instance=ExtResource("6_wqjel")]
+position = Vector2(-32, 416)
 
-[node name="DoorBlue2" parent="Doors" index="3" instance=ExtResource( 8 )]
-position = Vector2( 0, 256 )
-collision_layer = 1
-collision_mask = 1
+[node name="GreenKey2" parent="Objects" index="23" instance=ExtResource("6_wqjel")]
+position = Vector2(96, 416)
 
-[node name="DoorGreen" parent="Doors" index="4" instance=ExtResource( 6 )]
-position = Vector2( -320, -64 )
-collision_layer = 1
-collision_mask = 1
+[node name="RedKey" parent="Objects" index="24" instance=ExtResource("7_fbpbu")]
+position = Vector2(160, -32)
 
-[node name="DoorGreen2" parent="Doors" index="5" instance=ExtResource( 6 )]
-position = Vector2( -64, -64 )
-collision_layer = 1
-collision_mask = 1
+[node name="RedKey2" parent="Objects" index="25" instance=ExtResource("7_fbpbu")]
+position = Vector2(160, 96)
 
-[node name="DoorYellow" parent="Doors" index="6" instance=ExtResource( 3 )]
-position = Vector2( -256, 320 )
-collision_layer = 1
-collision_mask = 1
+[node name="YellowKey" parent="Objects" index="26" instance=ExtResource("8_7ludq")]
+position = Vector2(352, -96)
 
-[node name="DoorYellow2" parent="Doors" index="7" instance=ExtResource( 3 )]
-position = Vector2( -128, 320 )
-collision_layer = 1
-collision_mask = 1
-
-[node name="DoorCoin" parent="Doors" index="8" instance=ExtResource( 11 )]
-position = Vector2( -192, -64 )
-collision_layer = 1
-collision_mask = 1
-
-[node name="Finish" parent="." index="5"]
-position = Vector2( 224, -32 )
+[node name="YellowKey2" parent="Objects" index="27" instance=ExtResource("8_7ludq")]
+position = Vector2(-288, -96)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://objects/collectible.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/key_green.png" type="Texture" id=2]
+[ext_resource path="res://assets/key_green.png" type="Texture2D" id=2]
 
 [node name="GreenKey" instance=ExtResource( 1 )]
 type = 2
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sprite2D" parent="." index="0"]
 texture = ExtResource( 2 )

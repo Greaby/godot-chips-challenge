@@ -1,18 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://cbh4tay177o4"]
 
-[ext_resource path="res://objects/door.gd" type="Script" id=1]
-[ext_resource path="res://assets/door_coin.png" type="Texture" id=2]
+[ext_resource type="Script" path="res://objects/door.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://4dj6ncxlc6ne" path="res://assets/door_red.png" id="2_fv8ay"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(32, 32)
 
 [node name="Door" type="Area2D"]
 collision_layer = 8
 collision_mask = 2
-script = ExtResource( 1 )
+script = ExtResource("1")
+type = 1
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fv8ay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource("1")

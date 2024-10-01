@@ -1,36 +1,34 @@
 extends Area2D
 
+signal attack
 
-@onready var timer := $Timer
 @onready var raycast: RayCast2D = $RayCast2D
 
 const DIRECTIONS = [Vector2.LEFT, Vector2.UP, Vector2.RIGHT, Vector2.DOWN]
 
+func tick() -> void:
+	rotate(PI / -2)
+	get_direction()
 
-func _ready() -> void:
-	timer.start()
+func can_move_into(_direction: Vector2) -> bool:
+	return true
 
+func interact() -> void:
+	attack.emit()
 
+func get_direction(index: int = 0) -> void:
+	if index >= 4:
+		return
 
-func _on_Timer_timeout() -> void:
-	var direction = get_direction()
-	
-	#rotation = direction.angle()
-	
-	position += direction * Global.TILE_SIZE
-
-
-
-func get_direction(index: int = 0) -> Vector2:
-	if index > DIRECTIONS.size() -1:
-		return Vector2.ZERO
-
-	raycast.target_position = DIRECTIONS[index] * Global.TILE_SIZE
 	raycast.force_raycast_update()
-	
 	var collider = raycast.get_collider()
-	
-	if not collider:
-		return DIRECTIONS[index]
-	
-	return get_direction(index + 1)
+
+	var direction = raycast.target_position.rotated(rotation).normalized() * Global.TILE_SIZE
+
+	if collider and (!collider.has_method("can_move_into") or not collider.can_move_into(direction)):
+		rotate(PI / 2)
+		return get_direction(index + 1)
+
+
+	position += direction
+	return

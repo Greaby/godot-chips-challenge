@@ -21,8 +21,10 @@ func load_level() -> void:
 		return
 
 	level = load(LEVELS[level_number]).instantiate()
-	level.connect("completed", Callable(self, "on_level_completed"))
-	level.connect("game_over", Callable(self, "on_level_game_over"))
+
+	level.completed.connect(_on_level_completed)
+	level.game_over.connect(_on_level_game_over)
+
 	add_child(level)
 
 func unload_level() -> void:
@@ -30,7 +32,7 @@ func unload_level() -> void:
 		level.queue_free()
 
 
-func on_level_completed() -> void:
+func _on_level_completed() -> void:
 	alert_box.display("Level completed")
 	await alert_box.closed
 
@@ -38,7 +40,7 @@ func on_level_completed() -> void:
 	level_number += 1
 	load_level()
 
-func on_level_game_over() -> void:
+func _on_level_game_over() -> void:
 	alert_box.display("Game over")
 	await alert_box.closed
 

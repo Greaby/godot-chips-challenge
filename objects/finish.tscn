@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://b0633pu0slnuv"]
 
-[ext_resource path="res://objects/finish.gd" type="Script" id=1]
-[ext_resource path="res://assets/finish.png" type="Texture2D" id=2]
+[ext_resource type="Script" path="res://objects/finish.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c1off1mc2r1h8" path="res://assets/finish.png" id="2"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(32, 32)
 
-[node name="Finish" type="Area2D"]
+[node name="Finish" type="Area2D" groups=["finish"]]
 collision_layer = 8
 collision_mask = 2
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource("1")

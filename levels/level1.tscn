@@ -1,108 +1,112 @@
-[gd_scene load_steps=9 format=4 uid="uid://dayqupq8y3xw8"]
+[gd_scene load_steps=5 format=4 uid="uid://dayqupq8y3xw8"]
 
 [ext_resource type="PackedScene" uid="uid://7opiiecgq6y" path="res://levels/level.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://objects/chips.tscn" id="2_vunkx"]
 [ext_resource type="PackedScene" uid="uid://cbh4tay177o4" path="res://objects/door.tscn" id="3_um7k6"]
-[ext_resource type="PackedScene" path="res://objects/finish.tscn" id="4_8djxo"]
-[ext_resource type="PackedScene" path="res://objects/blue_key.tscn" id="5_8re6d"]
-[ext_resource type="PackedScene" path="res://objects/green_key.tscn" id="6_wqjel"]
-[ext_resource type="PackedScene" path="res://objects/red_key.tscn" id="7_fbpbu"]
-[ext_resource type="PackedScene" path="res://objects/yellow_key.tscn" id="8_7ludq"]
+[ext_resource type="PackedScene" uid="uid://b0633pu0slnuv" path="res://objects/finish.tscn" id="4_8djxo"]
+[ext_resource type="PackedScene" uid="uid://c6143taxphy7t" path="res://objects/collectible.tscn" id="9_j0tro"]
 
 [node name="Level1" instance=ExtResource("1")]
 time_limit = 100
 
-[node name="TileMap" parent="." index="1"]
+[node name="TileMap" parent="." index="2"]
 tile_map_data = PackedByteArray("AAAHAP3/AQAAAAAAAAAGAP3/AQAAAAAAAAAGAP7/AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AQAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAFAP//AAAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAQAAAAAAAAADAAQAAQAAAAAAAAADAAUAAQAAAAAAAAADAAYAAQAAAAAAAAADAAcAAQAAAAAAAAACAAcAAQAAAAAAAAACAAYAAAAAAAAAAAACAAUAAAAAAAAAAAAEAAMAAQAAAAAAAAADAAMAAQAAAAAAAAACAAMAAQAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAQAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wMAAQAAAAAAAAAAAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAAAAQAAAAAAAAAEAP//AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP3/AQAAAAAAAAADAAEAAQAAAAAAAAADAAAAAQAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAACAAEAAAAAAAAAAAADAP//AQAAAAAAAAABAP//AAAAAAAAAAAAAP//AAAAAAAAAAD/////AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAP7/AAAAAAAAAAACAP3/AAAAAAAAAAACAPz/AAAAAAAAAAABAPz/AQAAAAAAAAAAAPz/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AQAAAAAAAAACAAQAAAAAAAAAAAABAAQAAAAAAAAAAAAAAAQAAQAAAAAAAAD//wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD9/wQAAQAAAAAAAAD9/wMAAQAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAQAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAAIAAAAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAABAAcAAQAAAAAAAAABAAYAAAAAAAAAAAABAAUAAAAAAAAAAAD9/wAAAQAAAAAAAAD9////AQAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAD///3/AQAAAAAAAAD///z/AQAAAAAAAAD///v/AQAAAAAAAAAAAPv/AQAAAAAAAAABAPv/AQAAAAAAAAACAPv/AAAAAAAAAAADAPv/AAAAAAAAAAADAPz/AAAAAAAAAAADAP3/AQAAAAAAAAADAP7/AAAAAAAAAAAEAPz/AAAAAAAAAAAFAPz/AQAAAAAAAAAFAP3/AQAAAAAAAAAFAP7/AAAAAAAAAAAEAPv/AAAAAAAAAAAFAPv/AQAAAAAAAAAHAP7/AQAAAAAAAAD5//3/AQAAAAAAAAD5//7/AQAAAAAAAAD5////AQAAAAAAAAD5/wAAAQAAAAAAAAD5/wEAAQAAAAAAAAD5/wIAAQAAAAAAAAD5/wMAAQAAAAAAAAD6//3/AQAAAAAAAAD6//7/AAAAAAAAAAD6////AAAAAAAAAAD6/wAAAQAAAAAAAAD6/wEAAAAAAAAAAAD6/wIAAAAAAAAAAAD6/wMAAQAAAAAAAAD7//r/AQAAAAAAAAD7//v/AQAAAAAAAAD7//z/AQAAAAAAAAD7//3/AQAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD7/wAAAQAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wMAAQAAAAAAAAD8//r/AQAAAAAAAAD8//v/AAAAAAAAAAD8//z/AAAAAAAAAAD8//3/AQAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAQAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAQAAAAAAAAD9//r/AQAAAAAAAAD9//v/AAAAAAAAAAD9//z/AAAAAAAAAAD9//3/AQAAAAAAAAD9/wUAAQAAAAAAAAD9/wYAAQAAAAAAAAD9/wcAAQAAAAAAAAD+//r/AQAAAAAAAAD+//v/AAAAAAAAAAD+//z/AAAAAAAAAAD+//3/AAAAAAAAAAD+/wUAAAAAAAAAAAD+/wYAAAAAAAAAAAD+/wcAAQAAAAAAAAD///r/AQAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAD//wcAAQAAAAAAAAAAAPr/AQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAABAPr/AQAAAAAAAAACAPr/AQAAAAAAAAADAPr/AQAAAAAAAAAEAPr/AQAAAAAAAAAFAPr/AQAAAAAAAAA=")
 
-[node name="Chips" parent="Objects" index="0" instance=ExtResource("2_vunkx")]
-position = Vector2(-288, -32)
+[node name="Finish" parent="Objects" index="0" instance=ExtResource("4_8djxo")]
+position = Vector2(32, -224)
 
-[node name="Chips6" parent="Objects" index="1" instance=ExtResource("2_vunkx")]
-position = Vector2(-288, 96)
-
-[node name="Chips7" parent="Objects" index="2" instance=ExtResource("2_vunkx")]
-position = Vector2(-96, 32)
-
-[node name="Chips8" parent="Objects" index="3" instance=ExtResource("2_vunkx")]
-position = Vector2(160, 32)
-
-[node name="Chips10" parent="Objects" index="4" instance=ExtResource("2_vunkx")]
-position = Vector2(-32, 352)
-
-[node name="Chips9" parent="Objects" index="5" instance=ExtResource("2_vunkx")]
-position = Vector2(96, 352)
-
-[node name="Chips2" parent="Objects" index="6" instance=ExtResource("2_vunkx")]
-position = Vector2(-160, -224)
-
-[node name="Chips5" parent="Objects" index="7" instance=ExtResource("2_vunkx")]
-position = Vector2(352, -32)
-
-[node name="Chips3" parent="Objects" index="8" instance=ExtResource("2_vunkx")]
-position = Vector2(224, -224)
-
-[node name="Chips4" parent="Objects" index="9" instance=ExtResource("2_vunkx")]
-position = Vector2(352, 96)
-
-[node name="Door" parent="Objects" index="10" instance=ExtResource("3_um7k6")]
+[node name="Door" parent="Objects" index="1" instance=ExtResource("3_um7k6")]
 position = Vector2(32, -160)
 type = 0
 quantity = 10
 
-[node name="Door2" parent="Objects" index="11" instance=ExtResource("3_um7k6")]
+[node name="Door2" parent="Objects" index="2" instance=ExtResource("3_um7k6")]
 position = Vector2(160, -160)
 type = 2
 
-[node name="Door3" parent="Objects" index="12" instance=ExtResource("3_um7k6")]
+[node name="Door3" parent="Objects" index="3" instance=ExtResource("3_um7k6")]
 position = Vector2(224, -96)
 
-[node name="Door4" parent="Objects" index="13" instance=ExtResource("3_um7k6")]
+[node name="Door4" parent="Objects" index="4" instance=ExtResource("3_um7k6")]
 position = Vector2(224, 160)
 type = 3
 
-[node name="Door5" parent="Objects" index="14" instance=ExtResource("3_um7k6")]
+[node name="Door5" parent="Objects" index="5" instance=ExtResource("3_um7k6")]
 position = Vector2(96, 224)
 type = 4
 
-[node name="Door6" parent="Objects" index="15" instance=ExtResource("3_um7k6")]
+[node name="Door6" parent="Objects" index="6" instance=ExtResource("3_um7k6")]
 position = Vector2(-32, 224)
 type = 4
 
-[node name="Door7" parent="Objects" index="16" instance=ExtResource("3_um7k6")]
+[node name="Door7" parent="Objects" index="7" instance=ExtResource("3_um7k6")]
 position = Vector2(-160, 160)
 
-[node name="Door8" parent="Objects" index="17" instance=ExtResource("3_um7k6")]
+[node name="Door8" parent="Objects" index="8" instance=ExtResource("3_um7k6")]
 position = Vector2(-160, -96)
 type = 3
 
-[node name="Door9" parent="Objects" index="18" instance=ExtResource("3_um7k6")]
+[node name="Door9" parent="Objects" index="9" instance=ExtResource("3_um7k6")]
 position = Vector2(-96, -160)
 type = 2
 
-[node name="Finish" parent="Objects" index="19" instance=ExtResource("4_8djxo")]
-position = Vector2(32, -224)
+[node name="Coin1" parent="Objects" index="10" instance=ExtResource("9_j0tro")]
+position = Vector2(-160, -224)
 
-[node name="BlueKey" parent="Objects" index="20" instance=ExtResource("5_8re6d")]
+[node name="Coin2" parent="Objects" index="11" instance=ExtResource("9_j0tro")]
+position = Vector2(224, -224)
+
+[node name="Coin3" parent="Objects" index="12" instance=ExtResource("9_j0tro")]
+position = Vector2(352, -32)
+
+[node name="Coin4" parent="Objects" index="13" instance=ExtResource("9_j0tro")]
+position = Vector2(352, 96)
+
+[node name="Coin5" parent="Objects" index="14" instance=ExtResource("9_j0tro")]
+position = Vector2(96, 352)
+
+[node name="Coin6" parent="Objects" index="15" instance=ExtResource("9_j0tro")]
+position = Vector2(-32, 352)
+
+[node name="Coin7" parent="Objects" index="16" instance=ExtResource("9_j0tro")]
+position = Vector2(-288, 96)
+
+[node name="Coin8" parent="Objects" index="17" instance=ExtResource("9_j0tro")]
+position = Vector2(-288, -32)
+
+[node name="Coin9" parent="Objects" index="18" instance=ExtResource("9_j0tro")]
+position = Vector2(-96, 32)
+
+[node name="Coin10" parent="Objects" index="19" instance=ExtResource("9_j0tro")]
+position = Vector2(160, 32)
+
+[node name="BlueKey1" parent="Objects" index="20" instance=ExtResource("9_j0tro")]
 position = Vector2(-96, -32)
+type = 3
 
-[node name="BlueKey2" parent="Objects" index="21" instance=ExtResource("5_8re6d")]
+[node name="BlueKey2" parent="Objects" index="21" instance=ExtResource("9_j0tro")]
 position = Vector2(-96, 96)
+type = 3
 
-[node name="GreenKey" parent="Objects" index="22" instance=ExtResource("6_wqjel")]
-position = Vector2(-32, 416)
-
-[node name="GreenKey2" parent="Objects" index="23" instance=ExtResource("6_wqjel")]
-position = Vector2(96, 416)
-
-[node name="RedKey" parent="Objects" index="24" instance=ExtResource("7_fbpbu")]
+[node name="RedKey1" parent="Objects" index="22" instance=ExtResource("9_j0tro")]
 position = Vector2(160, -32)
+type = 1
 
-[node name="RedKey2" parent="Objects" index="25" instance=ExtResource("7_fbpbu")]
+[node name="RedKey2" parent="Objects" index="23" instance=ExtResource("9_j0tro")]
 position = Vector2(160, 96)
+type = 1
 
-[node name="YellowKey" parent="Objects" index="26" instance=ExtResource("8_7ludq")]
-position = Vector2(352, -96)
+[node name="GreenKey1" parent="Objects" index="24" instance=ExtResource("9_j0tro")]
+position = Vector2(-32, 416)
+type = 2
 
-[node name="YellowKey2" parent="Objects" index="27" instance=ExtResource("8_7ludq")]
+[node name="GreenKey2" parent="Objects" index="25" instance=ExtResource("9_j0tro")]
+position = Vector2(96, 416)
+type = 2
+
+[node name="YellowKey1" parent="Objects" index="26" instance=ExtResource("9_j0tro")]
 position = Vector2(-288, -96)
+type = 4
+
+[node name="YellowKey2" parent="Objects" index="27" instance=ExtResource("9_j0tro")]
+position = Vector2(352, -96)
+type = 4

@@ -17,3 +17,12 @@ texture = ExtResource("2_fv8ay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("1")
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = -9.0
+theme_override_font_sizes/font_size = 20
+text = "x1"
+horizontal_alignment = 2

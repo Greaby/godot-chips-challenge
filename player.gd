@@ -17,10 +17,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	var collider = raycast.get_collider()
 
-	if collider and !collider.has_method("can_move"):
+	if collider and !collider.has_method("can_move_into"):
 		return
 
-	if collider and not collider.can_move():
+	if collider and not collider.can_move_into(direction):
 		return
 
 	position += direction * Global.TILE_SIZE

@@ -1,8 +1,9 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://dp1clmt6rt5tm"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://dp1clmt6rt5tm"]
 
 [ext_resource type="Texture2D" uid="uid://beqtfnrxqi53h" path="res://assets/floor.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://s5x00smqg6ey" path="res://assets/wall.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://bvjt1kwq37j0p" path="res://assets/water.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://cqmmroux5jyvu" path="res://tile_objects/fire.tscn" id="4_flpxf"]
+[ext_resource type="PackedScene" uid="uid://iav5cgiu61ga" path="res://tile_objects/water.tscn" id="4_ooqyj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pl7s7"]
 texture = ExtResource("1")
@@ -62,35 +63,16 @@ texture_region_size = Vector2i(64, 64)
 0:0/7/transpose = true
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rkerf"]
-texture = ExtResource("3")
-texture_region_size = Vector2i(64, 64)
-0:0/next_alternative_id = 8
-0:0/0 = 0
-0:0/1 = 1
-0:0/1/flip_h = true
-0:0/2 = 2
-0:0/2/flip_v = true
-0:0/3 = 3
-0:0/3/flip_h = true
-0:0/3/flip_v = true
-0:0/4 = 4
-0:0/4/transpose = true
-0:0/5 = 5
-0:0/5/flip_h = true
-0:0/5/transpose = true
-0:0/6 = 6
-0:0/6/flip_v = true
-0:0/6/transpose = true
-0:0/7 = 7
-0:0/7/flip_h = true
-0:0/7/flip_v = true
-0:0/7/transpose = true
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cieyf"]
+scenes/2/scene = ExtResource("4_ooqyj")
+scenes/3/scene = ExtResource("4_flpxf")
 
 [resource]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 15
+physics_layer_1/collision_layer = 1
+physics_layer_1/collision_mask = 15
 sources/0 = SubResource("TileSetAtlasSource_pl7s7")
 sources/1 = SubResource("TileSetAtlasSource_78k0x")
-sources/2 = SubResource("TileSetAtlasSource_rkerf")
+sources/3 = SubResource("TileSetScenesCollectionSource_cieyf")

@@ -25,8 +25,8 @@ var sprite_types = {
 func _ready() -> void:
 	_set_sprite()
 
-func can_move_into(_direction: Vector2) -> bool:
-	return Inventory.quantity(type) >= quantity
+func can_move_into(_direction: Vector2, entity: Area2D) -> bool:
+	return entity.is_in_group("player") and Inventory.quantity(type) >= quantity
 
 func interact() -> void:
 	Inventory.remove(type, quantity)

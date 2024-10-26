@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://n370t0g4btcq"]
+
+[ext_resource type="Script" path="res://tile_objects/dirt.gd" id="1_wh2h3"]
+[ext_resource type="Texture2D" uid="uid://c7vp0xmc0f54" path="res://assets/dirt.png" id="2_q1w1d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocohg"]
+
+[node name="Dirt" type="Area2D"]
+collision_mask = 15
+script = ExtResource("1_wh2h3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_q1w1d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ocohg")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

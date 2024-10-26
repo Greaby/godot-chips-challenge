@@ -10,7 +10,7 @@ script = ExtResource("15")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Tick" type="Timer" parent="."]
-wait_time = 0.6
+wait_time = 0.2
 autostart = true
 
 [node name="TileMap" type="TileMapLayer" parent="."]

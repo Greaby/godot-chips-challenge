@@ -3,7 +3,8 @@ extends Node2D
 
 const LEVELS = {
 	1 : "res://levels/level1.tscn",
-	2 : "res://levels/level2.tscn"
+	2 : "res://levels/level2.tscn",
+	3 : "res://levels/level3.tscn"
 }
 
 

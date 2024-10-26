@@ -6,6 +6,8 @@ enum TYPES {
 	GREEN_KEY,
 	BLUE_KEY,
 	YELLOW_KEY,
+	PALMS,
+	FIRE_BOOTS,
 }
 
 var inventory : = {}

@@ -15,13 +15,15 @@ var sprite_types = {
 	Inventory.TYPES.GREEN_KEY: "res://assets/key_green.png",
 	Inventory.TYPES.BLUE_KEY: "res://assets/key_blue.png",
 	Inventory.TYPES.YELLOW_KEY: "res://assets/key_yellow.png",
+	Inventory.TYPES.PALMS: "res://assets/palms.png",
+	Inventory.TYPES.FIRE_BOOTS: "res://assets/fire_boots.png",
 }
 
 func _ready() -> void:
 	_set_sprite()
 
-func can_move_into(_direction: Vector2) -> bool:
-	return true
+func can_move_into(_direction: Vector2, entity: Area2D) -> bool:
+	return entity.is_in_group("player")
 
 func interact() -> void:
 	Inventory.add(type, 1)

@@ -10,7 +10,10 @@ func tick() -> void:
 	rotate(PI / -2)
 	get_direction()
 
-func can_move_into(_direction: Vector2) -> bool:
+func can_move_into(_direction: Vector2, entity: Area2D) -> bool:
+	if entity.is_in_group("block"):
+		return false
+
 	return true
 
 func interact() -> void:
@@ -25,10 +28,9 @@ func get_direction(index: int = 0) -> void:
 
 	var direction = raycast.target_position.rotated(rotation).normalized() * Global.TILE_SIZE
 
-	if collider and (!collider.has_method("can_move_into") or not collider.can_move_into(direction)):
+	if collider and (!collider.has_method("can_move_into") or not collider.can_move_into(direction, self)):
 		rotate(PI / 2)
 		return get_direction(index + 1)
-
 
 	position += direction
 	return

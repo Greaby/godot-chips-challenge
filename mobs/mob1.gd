@@ -32,5 +32,6 @@ func get_direction(index: int = 0) -> void:
 		rotate(PI / 2)
 		return get_direction(index + 1)
 
+
 	position += direction
 	return

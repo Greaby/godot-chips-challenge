@@ -20,18 +20,11 @@ func can_move_into(direction: Vector2, entity: Area2D) -> bool:
 	if collider and not collider.can_move_into(direction, self):
 		return false
 
-	position += direction * Global.TILE_SIZE
+	_move(direction)
+
 	return true
 
-
-
-
-func _on_area_entered(area: Area2D) -> void:
-	print("_on_area_entered")
-	print(area)
-
-
-
-
-func _on_body_entered(body: Node2D) -> void:
-	print("_on_body_entered")
+func _move(direction: Vector2) -> void:
+	var tween = create_tween()
+	tween.tween_property(self, "position", position + direction * Global.TILE_SIZE, Global.MOVING_ANIMATION_SPEED)
+	await tween.finished

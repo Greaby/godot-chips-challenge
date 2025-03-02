@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbw23vqmrnckw"
-path="res://.godot/imported/water.png-60eb5d11192d61f791951f83acef7554.ctex"
+uid="uid://dnnnqcjyydwpb"
+path="res://.godot/imported/bee.png-469d020af86c28d3c23c050401c784ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/water.png"
-dest_files=["res://.godot/imported/water.png-60eb5d11192d61f791951f83acef7554.ctex"]
+source_file="res://assets/bee.png"
+dest_files=["res://.godot/imported/bee.png-469d020af86c28d3c23c050401c784ff.ctex"]
 
 [params]
 

@@ -10,7 +10,7 @@ extends Area2D
 @onready var sprite : Sprite2D = $Sprite2D
 
 var sprite_types = {
-	Inventory.TYPES.COIN : "res://assets/coin.png",
+	Inventory.TYPES.COIN : "res://assets/apple.png",
 	Inventory.TYPES.RED_KEY: "res://assets/key_red.png",
 	Inventory.TYPES.GREEN_KEY: "res://assets/key_green.png",
 	Inventory.TYPES.BLUE_KEY: "res://assets/key_blue.png",
@@ -21,6 +21,8 @@ var sprite_types = {
 
 func _ready() -> void:
 	_set_sprite()
+	$AnimationPlayer.play("default")
+	$AnimationPlayer.advance(randf())
 
 func can_move_into(_direction: Vector2, entity: Area2D) -> bool:
 	return entity.is_in_group("player")

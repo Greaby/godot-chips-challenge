@@ -137,4 +137,3 @@ func _on_ImportFileDialog_file_selected(path: String) -> void:
 		print("Error reading level")
 
 	tilemap.set("tile_data", json_level.result.data.terrain)
-

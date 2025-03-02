@@ -28,4 +28,4 @@ func _interact_mob(mob: Area2D) -> void:
 
 func _interact_player(player: Area2D) -> void:
 	if not Inventory.has(Inventory.TYPES.PALMS):
-		player.die.emit()
+		player.drown()

@@ -20,6 +20,10 @@ config/icon="res://icon.png"
 Inventory="*res://autoload/inventory.gd"
 Global="*res://autoload/global.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

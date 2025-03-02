@@ -1,17 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://cx43wy3d5v8e8"]
 
 [ext_resource type="Script" path="res://objects/block.gd" id="1_iqng0"]
-[ext_resource type="Texture2D" uid="uid://batqk3vl37ygm" path="res://assets/block.png" id="2_y5gvu"]
+[ext_resource type="Texture2D" uid="uid://doe8cmklskpua" path="res://assets/box.png" id="2_hcxwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2rxu0"]
 
 [node name="Block" type="Area2D" groups=["block"]]
+y_sort_enabled = true
 collision_layer = 8
 collision_mask = 15
 script = ExtResource("1_iqng0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_y5gvu")
+texture_filter = 1
+position = Vector2(0, -10)
+scale = Vector2(4, 4)
+texture = ExtResource("2_hcxwl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2rxu0")
@@ -20,6 +24,3 @@ shape = SubResource("RectangleShape2D_2rxu0")
 target_position = Vector2(0, 64)
 collision_mask = 15
 collide_with_areas = true
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
